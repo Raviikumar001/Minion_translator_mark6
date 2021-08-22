@@ -1,7 +1,7 @@
 const inputTextArea = document.querySelector("#input-text-area");
 const outputDiv = document.querySelector("#output-div");
 const translateButton = document.querySelector("#translate-btn");
-const miniApi = "https://api.funtranslations.com/translate/pirate.json";
+const miniApi = "https://api.funtranslations.com/translate/minion.json";
 
 const translate = (text) => {
   return miniApi + "?text=" + text;
