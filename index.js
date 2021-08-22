@@ -3,23 +3,23 @@ const outputDiv = document.querySelector("#output-div");
 const translateButton = document.querySelector("#translate-btn");
 const miniApi = "https://api.funtranslations.com/translate/minion.json";
 
-const translateQuery = (text) => {
+const translate = (text) => {
   return miniApi + "?text=" + text;
 };
-const errorHandler = (err) => {
+const errorHandle = (err) => {
   console.log(err);
   alert("Something went wrong, Please try again later!");
 };
 
 const transelateText = () => {
   const textToTranslate = inputTextArea.value;
-  fetch(translateQuery(textToTranslate))
+  fetch(translate(textToTranslate))
     .then((res) => res.json())
     .then((json) => {
       const tranlatedText = json.contents.translated;
       outputDiv.innerText = tranlatedText;
     })
-    .catch(errorHandler);
+    .catch(errorHandle);
 };
 
 translateButton.addEventListener("click", transelateText);
